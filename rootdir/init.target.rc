@@ -27,7 +27,7 @@
 
 # Not include QCOM USB combinations
 
-# import init.qcom.usb.rc
+import init.qcom.usb.rc
 import init.ril.rc
 import init.project.rc
 
