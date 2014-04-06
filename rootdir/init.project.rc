@@ -59,7 +59,9 @@ on init
 
 # import cne init file
 on post-fs
-#    export LD_PRELOAD /vendor/lib/libNimsWrap.so
+    export LD_PRELOAD /vendor/lib/libNimsWrap.so
+    chown system carrier /carrier
+    chmod 0770 /carrier
 
 on fs
     wait /dev/block/platform/msm_sdcc.1/by-name/system
@@ -88,6 +90,11 @@ on fs
     wait /dev/block/platform/msm_sdcc.1/by-name/reserve
     mount vfat emmc@reserve /ramdump rw
     umount /ramdump
+
+    # Mount carrier partition
+    mkdir /carrier 0770 system carrier
+    wait /dev/block/platform/msm_sdcc.1/by-name/carrier
+    mount ext4 emmc@carrier /carrier nosuid nodev noatime barrier=1,grpid
 
     # Mount radio image and link to /vendor/firmware
     mkdir /firmware/radio 0771 system system
@@ -136,8 +143,6 @@ on post-fs-data
 # permissions for NFC
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
-    chown nfc nfc /sys/class/NFC_sensor/comn/nxp_uicc_swp
-    chmod 0664 /sys/class/NFC_sensor/comn/nxp_uicc_swp
 	setprop debug.nfc.fw_download "true"
 	setprop debug.nfc.fw_boot_download "false"
 
@@ -155,11 +160,6 @@ on boot
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
 # - SSD_RIL : Enlarge TCP window size for ATT HSDPA Cat 14 (Sync from M4ATT)
-
-# VMware BEGIN
-# VMware MVP feature list (generated)
-    setprop ro.mvp.features srvc,mvpdaff,grbks2,vpncrt,vpn,mvpdsec
-# VMware END
 
 
 # Allow usb charging to be disabled persistently
@@ -316,16 +316,6 @@ service ims_rtp_daemon /system/bin/ims_rtp_daemon
 on property:sys.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
 
-# VMware BEGIN
-# VMware MVP Hypervisor daemon
-# DO NOT REMOVE THIS COMMENT MVP_FEATURE_srvc
-# DO NOT REMOVE THIS COMMENT MVP_FEATURE_mvpdaff
-    service mvpd /system/bin/mvpd -F -a 14
-        class main
-        user root
-        disabled
-# VMware END
-
 # HTC CIR firmware update - BEGIN
 service cir_fw_update /system/bin/cir_fw_update -u cir.img
     class main
@@ -358,6 +348,13 @@ on property:ro.build.tags=release-keys
 service tpd /sbin/tpd
     class core
     user root
+
+#++ DMAgent
+service dmagent /system/bin/dmagent -N -P19 -VSY -SA
+    class late_start
+    socket dmagent stream 0660 root inet
+    user root
+#-- DMAgent
 
 # HTC Automotive - BEGIN
 service cand /system/bin/cand

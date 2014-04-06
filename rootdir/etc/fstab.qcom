@@ -6,7 +6,7 @@
 /dev/block/mmcblk0p42                           /boot           emmc    defaults                                                                    defaults
 /dev/block/mmcblk0p43                           /recovery       emmc    defaults                                                                    defaults
 /dev/block/mmcblk0p45                           /system         ext4    ro,seclabel,noatime,data=ordered                                            wait
-/dev/block/platform/msm_sdcc.1/by-name/userdata /data           ext4    rw,seclabel,nosuid,nodev,relatime,discard,noauto_da_alloc,data=ordered      wait,check
+/dev/block/mmcblk0p47							 /data           ext4    rw,seclabel,nosuid,nodev,relatime,discard,noauto_da_alloc,data=ordered      wait,check
 /dev/block/mmcblk0p46                           /cache          ext4    rw,seclabel,nosuid,nodev,relatime,data=ordered                              wait,check 
 /dev/block/mmcblk0p39                           /devlog         ext4    rw,seclabel,nosuid,nodev,relatime,errors=continue,data=ordered              wait
 /dev/block/mmcblk0p27                           /fataldevlog    ext4    rw,seclabel,nosuid,nodev,relatime,errors=continue,data=ordered              wait 
