@@ -1,2 +1,1 @@
-android_device_htc_m8
-=====================
+Device configuration for the HTC One M8 (2014).

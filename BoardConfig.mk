@@ -27,13 +27,10 @@
 # inherit from common msm8974
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
-BOARD_VENDOR := htc
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := m8
 
 # Kernel
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -65,7 +62,7 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
