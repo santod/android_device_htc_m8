@@ -27,42 +27,7 @@
 # inherit from common msm8974
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := m8
-
-# Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 TARGET_KERNEL_CONFIG := cm_m8_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/msm8974
-
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x105c0000
-BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_HAS_NO_SELECT_BUTTON := true
-
-# Wifi
-BOARD_HAS_QCOM_WLAN := true
-BOARD_WLAN_DEVICE := qcwcn
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
-WIFI_DRIVER_MODULE_NAME := "wlan"
-WIFI_DRIVER_FW_PATH_STA := "sta"
-WIFI_DRIVER_FW_PATH_AP := "ap"
-
-# Filesystem
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2818572288
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 11676942336 
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/fstab.qcom
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
@@ -113,6 +78,3 @@ TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/fstab.qcom
 # mmcblk0p45: a8000000  00000200  "system"
 # mmcblk0p46: 18000000  00000200  "cache"
 # mmcblk0p47: b8000000  00000200  "userdata"
-
-# inherit from the proprietary version
--include vendor/htc/m8/BoardConfigVendor.mk

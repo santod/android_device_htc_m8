@@ -16,16 +16,3 @@ $(call inherit-product-if-exists, vendor/htc/m8/m8-vendor.mk)
 
 # Inherit from msm8974-common
 $(call inherit-product, device/htc/msm8974-common/msm8974.mk)
-
-# Ramdisk
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/rootdir/init.htc.audio.sh:root/init.htc.audio.sh \
-    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/init.network.sh:root/init.network.sh \
-    $(LOCAL_PATH)/rootdir/init.power.rc:root/init.power.rc \
-    $(LOCAL_PATH)/rootdir/init.project.rc:root/init.project.rc \
-    $(LOCAL_PATH)/rootdir/init.ril.rc:root/init.ril.rc \
-    $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/init.usbdiag.sh:root/init.usbdiag.sh
-

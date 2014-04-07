@@ -21,9 +21,6 @@
 # lines, full and maguro, hence its name.
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit from m8 device
 $(call inherit-product, device/htc/m8/device.mk)
 
