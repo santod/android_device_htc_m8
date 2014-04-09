@@ -19,8 +19,7 @@
 # inherit from common msm8974
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
-TARGET_KERNEL_CONFIG := poke_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := sm-arm-eabi-4.7
+TARGET_KERNEL_CONFIG := liquid_m8wl_defconfig
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
