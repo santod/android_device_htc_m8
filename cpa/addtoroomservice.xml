@@ -1,0 +1,7 @@
+#
+# If you want my custom Mms in your build, copy and paste the below
+# directly into .repo/local_manifests/roomservice.xml
+#
+
+<remove-project name="packages_apps_Mms" />
+<project path="packages/apps/Mms" name="Liquid-CPA/android_packages_apps_Mms" remote="gh" revision="kitkat"/>

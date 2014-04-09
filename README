@@ -1,0 +1,8 @@
+Copyright 2012 - The CyanogenMod Project
+Copyright 2014 - The LiquidSmooth Project
+
+Common device configuration for HTC One M8 (2014)
+
+NOTE: If you want to replicate my build for the M8, navigate to the /cpa folder 
+of the this device tree and open "addtoroomservice.xml"; then follow the instructions
+in it (you guessed it...adding some stuff to the roomservice).
