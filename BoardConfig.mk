@@ -20,7 +20,7 @@
 -include device/htc/msm8974-common/BoardConfigCommon.mk
 
 TARGET_KERNEL_CONFIG := poke_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := sm-arm-eabi-4.8
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := sm-arm-eabi-4.7
 
 # cat /proc/emmc                                              
 # dev:        size     erasesize name
