@@ -238,8 +238,10 @@ etc/firmware/wlan/prima/WCNSS_cfg.dat
 
 # QMI
 vendor/lib/libdiag.so
+vendor/lib/libdsnetutils.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
+vendor/lib/libtime_genoff.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
