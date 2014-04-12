@@ -16,3 +16,7 @@ $(call inherit-product-if-exists, vendor/htc/m8/m8-vendor.mk)
 
 # Inherit from msm8974-common
 $(call inherit-product, device/htc/msm8974-common/msm8974.mk)
+
+#common build.props
+PRODUCT_PROPERTY_OVERRIDES += \
+    otaupdater.otaid=liquidm8
