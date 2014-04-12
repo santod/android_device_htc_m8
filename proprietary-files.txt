@@ -4,12 +4,24 @@ vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 
 # Binaries
-bin/irsc_util
+bin/adsprpcd
+bin/ATFWD-daemon
+bin/cand
+bin/cir_fw_update
+bin/hcheck
 bin/hci_qcomm_init
-bin/mpdecision
-bin/qmuxd
+bin/htc_ebdlogd
+bin/irsc_util
 bin/mm-qcamera-daemon
+bin/mpdecision
 bin/netmgrd
+bin/ptt_socket_app
+bin/qmuxd
+bin/qseecomd
+bin/readDapCert
+bin/rmt_storage
+bin/time_daemon
+bin/wcnss_service
 
 # Camera
 lib/hw/camera.vendor.msm8974.so
