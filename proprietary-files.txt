@@ -4,6 +4,8 @@ vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 
 # Binaries
+bin/irsc_util
+bin/hci_qcomm_init
 bin/mpdecision
 bin/qmuxd
 bin/mm-qcamera-daemon
