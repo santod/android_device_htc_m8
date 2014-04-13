@@ -13,8 +13,8 @@
   },
   {
     "remote": "gh",
-    "repository": "htc-msm8974/android_vendor_htc_m8",
-    "target_path": "vendor/htc/m8",
+    "repository": "htc-msm8974/proprietary_vendor_htc",
+    "target_path": "vendor/htc",
     "revision": "cm-11.0"
   },
   {
